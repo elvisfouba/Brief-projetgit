@@ -25,8 +25,6 @@ else:
 
 
 
-
-
 def login_session():
     while 1:
         print("")
@@ -48,6 +46,7 @@ def login_session():
             password = input(str("password : "))
             print("_" * 50)
             print("Bienvenue")
+            
 
         elif user_option == "2":
             print("")
@@ -101,21 +100,40 @@ def vue_plateforme():
             print("Formulaire de la declaration")
             print("")
             print("_" * 50)
-            nom = input(str("nom : "))
-            prenom = input(str("prenom : "))
-            nom_du_pere = input(str("nom du père : "))
-            nom_du_mere = input(str("nom du mère : "))
-            situation_matrimoniale_du_pere = input(str("situation matrimoniale du père : "))
-            situation_matrimoniale_du_mere = input(str("situation matrimoniale du mère : "))
-            sexe_enfant = input(str("Sexe de l'enfant : "))
-            lieu_de_Naissance = input(str("Sexe de l'enfant : "))
-            annee_de_naissance= input(str("Année de naissance : "))
+            print("Center d'Etat civil PRINCIPAL")
+            de = input(str("de : "))
+            le1 = input(str("le : "))
+            print("S'est presente(e) suivant la déclaration des parents de l'enfant")
+            print("qui a declaré la naissance d'un ")
+            enfant_de_sexe =input(str("enfant du sexe: "))
+            survenue_a = input(str("survenue à: "))
+            rue = input(str("Rue: "))
+            le2 = input(str("Le : "))
+            nomme = input(str(" Nom complet de enfant : "))
+            fils_ou_fille_de = input(str("Nom complet du père : "))
+            ne_a = input(str("Né à : "))
+            le3 = input(str("Le : "))
+            profession = input(str("Profession : "))
+            et_de = input(str("Nom complet de la mère : "))
+            nee_a = input(str("Née à : "))
+            le4 = input(str("Le : "))
+            profession_m = input(str("Profession : "))
+            print("Sa legistime épouse")
+            print("")
+            print("L'officier d'Etat civil")
+            print("")
+            print("")
+            print("")
+            print("")
+            print("Fait à N'Djamena")
+            print("")
+            print("Votre declaration a bien été enregistré")
+            print("_" * 50)
 
+#L'administar doit l'authentifier à partir de ce login directement
+# car on peut laisser la main pour son inscription du fait qu'il contrôle tous
+#donc son non d'utilisateur et et son mot de passe sont enregistrer directement dans la base de donnée
 
-
-            
-
-       
 def admin_session():
     while True:
         print("")
