@@ -1,30 +1,3 @@
-import mysql.connector
-from mysql.connector import errorcode
-import getpass
-
-try:
-  mybd = mysql.connector.connect(user='',database='plateforme')
-except mysql.connector.Error as err:
-  if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-    print("Something is wrong with your user name or password")
-  elif err.errno == errorcode.ER_BAD_DB_ERROR:
-    print("Database does not exist")
-  else:
-    print(err)
-else:
-  mybd.close()
-
-  username = getpass.getuser()
-  while True:
-      password = getpass.getpass("username %s" % username)
-      if password =='abcdefdg':
-          print("Bienvenue da la plateforme système acte de naissance!")
-          break
-      else:
-          print(" voter username ou password est incorrect")
-
-
-
 
 
 def login_session():
