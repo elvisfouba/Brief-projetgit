@@ -1,29 +1,3 @@
-import mysql.connector
-from mysql.connector import errorcode
-import getpass
-
-try:
-  mybd = mysql.connector.connect(user='',database='plateforme')
-except mysql.connector.Error as err:
-  if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-    print("Something is wrong with your user name or password")
-  elif err.errno == errorcode.ER_BAD_DB_ERROR:
-    print("Database does not exist")
-  else:
-    print(err)
-else:
-  mybd.close()
-
-  username = getpass.getuser()
-  while True:
-      password = getpass.getpass("username %s" % username)
-      if password =='abcdefdg':
-          print("Bienvenue da la plateforme système acte de naissance!")
-          break
-      else:
-          print(" voter username ou password est incorrect")
-
-
 
 def login_session():
     while 1:
@@ -43,7 +17,7 @@ def login_session():
             print("AUTHENTIFICATION")
             print("")
             username = input(str("username : "))
-            password = input(str("password : "))
+            pass_word = input(str("pass_word : "))
             print("_" * 50)
             print("Bienvenue")
             
@@ -59,14 +33,14 @@ def login_session():
             while True:
                 password = input(str("Entrer un mot de passe (min 8 caractères) : "))
                 mdp_trop_court = "votre mot de passe est trop court."
-                if len(password) == 0:
+                if len(pass_word) == 0:
                     print(mdp_trop_court.upper())
-                elif len(password) < 8: 
+                elif len(pass_word) < 8: 
                     print(mdp_trop_court.capitalize())
-                elif password.isdigit():
+                elif pass_word.isdigit():
                     print("Votre mot de passe ne contient que des nombres.")
                     confirme_password = input(str("Veuillez confirmer votre password : "))
-                if password == confirme_password:
+                if pass_word == confirme_password:
                     print("Inscription terminéé.")
                     break
                 else:
@@ -80,7 +54,7 @@ def login_session():
 
 #def registre():
 
-def vue_plateforme():
+def acte_naissance():
      while True:
         print("")
         print("Menu")
@@ -130,7 +104,7 @@ def vue_plateforme():
             print("Votre declaration a bien été enregistré")
             print("_" * 50)
 
-#L'administar doit l'authentifier à partir de ce login directement
+#L'administration doit l'authentifier à partir de ce login directement
 # car on peut laisser la main pour son inscription du fait qu'il contrôle tous
 #donc son non d'utilisateur et et son mot de passe sont enregistrer directement dans la base de donnée
 
@@ -141,10 +115,10 @@ def admin_session():
         print("")
         print("_" * 50)
         username = input(str("username : "))
-        password = input(str("password : "))
+        pass_word = input(str("pass_word : "))
         print("_" * 50)
         print("")
-        vue_plateforme()
+        acte_naissance()
         
 
 
